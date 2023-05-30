@@ -1,43 +1,52 @@
 import React from 'react';
 import styled from 'styled-components';
+
+import { media } from 'styles/mediaQueries';
+
 import Meta from '../../_shared/Meta';
+import CharacterCard from 'src/components/_shared/CharacterCard';
 
 interface IIntroTemplateProps {
-  className?: string;
+  rickCharacters: LickApi.ICharacterCore[];
+  mortyCharacters: LickApi.ICharacterCore[];
   title: string;
 }
 
 const IntroTemplate: React.FC<IIntroTemplateProps> = ({
-  className,
-  title
+  rickCharacters,
+  mortyCharacters,
+  title,
 }) => {
   return (
     <>
       <Meta title={title} />
-      <Wrapper className={className}>
-        <IntroImage src="https://rickandmortyapi.com/api/character/avatar/1.jpeg" />
-
-        <IntroCopy>
-          Please use the <strong>README.md</strong> file located in this repo to start the challenge.
-        </IntroCopy>
-        <IntroCopy>
-          Remember you do not need to complete both parts of this task. See how far you can get.
-        </IntroCopy>
-        <IntroCopy>
-          If you cannot complete it, then please ensure you can let us know what it is you would have done should you have had more time.
-        </IntroCopy>
-        <IntroCopy>** You can delete this file 👍</IntroCopy>
+      <Wrapper>
+        {rickCharacters.map((character) => (
+          <CharacterCard character={character} />
+        ))}
       </Wrapper>
     </>
   );
 };
 
 const Wrapper = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
   position: relative;
   max-width: 600px;
   margin: 0 auto;
   text-align: center;
   padding: 40px;
+
+  ${media.tablet} {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  ${media.desktop} {
+    max-width: 1360px;
+    grid-template-columns: repeat(6, 1fr);
+  }
 `;
 
 const IntroImage = styled.img`
