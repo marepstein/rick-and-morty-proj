@@ -1,5 +1,10 @@
 import React from 'react';
-import { CardContainer, CardImage, CardInfoContainer, CardInfo } from './styles';
+import {
+  CardContainer,
+  CardImage,
+  CardInfoContainer,
+  CardInfo,
+} from './styles';
 
 interface ICharacterCardProps {
   image: string;
@@ -8,9 +13,10 @@ interface ICharacterCardProps {
   species: string;
 }
 
-const CharacterCard = ({ character }) => {
+const CharacterCard = ({ character, loading }) => {
   return (
     <CardContainer>
+      {loading && 'Loading...'}
       <CardImage src={character.image} />
       <CardInfoContainer>
         <CardInfo>Name: {character.name}</CardInfo>

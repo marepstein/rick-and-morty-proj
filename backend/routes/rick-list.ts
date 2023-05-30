@@ -4,11 +4,11 @@ import { rickAndMortyApiClient } from '../providers/rickAndMortyApiClient';
 
 const router = express.Router();
 
-router.route('/alive-mortys')
+router.route('/alive-ricks')
  .get(async (_, res: express.Response) => {
   const { data } = await characterService({
     rickAndMortyApiClient,
-  }).getAliveMortys();
+  }).getAliveRicks();
   res.json(data);
 });
 

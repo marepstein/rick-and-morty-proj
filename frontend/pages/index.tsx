@@ -34,6 +34,7 @@ const IntroPage: NextPage = () => {
     <IntroTemplate
       rickCharacters={rickCharacters}
       mortyCharacters={mortyCharacters}
+      loading={isLoading}
       title="Rick and Morty FE Tech Test"
     />
   );
