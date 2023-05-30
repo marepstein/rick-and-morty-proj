@@ -1,4 +1,4 @@
-name: frontend testing
+name: backend testing
 on:
   push:
     branches: [ main ]
