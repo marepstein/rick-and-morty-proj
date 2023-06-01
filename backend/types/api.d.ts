@@ -13,9 +13,15 @@ declare global {
       rickAndMortyApiClient: AxiosInstance;
     };
 
-    interface MyRouteHandler {
-      (req: Request, res: Response, next: Function): void;
-    }
+    type LocationServiceCapabilities = {
+      rickAndMortyApiClient: AxiosInstance;
+      id: number;
+    };
+
+    type EpisodeServiceCapabilities = {
+      rickAndMortyApiClient: AxiosInstance;
+      id: number;
+    };
 
     interface IRickAndMortyApiCharactersResponse {
       info: {

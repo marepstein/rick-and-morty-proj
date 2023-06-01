@@ -1,4 +1,6 @@
+import { useRouter } from 'next/router';
 import React from 'react';
+
 import {
   CardContainer,
   CardImage,
@@ -13,9 +15,10 @@ interface ICharacterCardProps {
   species: string;
 }
 
-const CharacterCard = ({ character, loading }) => {
+const CharacterCard = ({ character, loading, onClick }) => {
+
   return (
-    <CardContainer>
+    <CardContainer onClick={() => onClick(character)}>
       {loading && 'Loading...'}
       <CardImage src={character.image} />
       <CardInfoContainer>

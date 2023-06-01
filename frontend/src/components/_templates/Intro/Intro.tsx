@@ -10,20 +10,22 @@ interface IIntroTemplateProps {
   mortyCharacters: LickApi.ICharacterCore[];
   title: string;
   loading: boolean;
+  onClick: Function;
 }
 
 const IntroTemplate: React.FC<IIntroTemplateProps> = ({
   rickCharacters,
   mortyCharacters,
   title,
-  loading
+  loading,
+  onClick
 }) => {
   return (
     <>
       <Meta title={title} />
       <Wrapper>
         {rickCharacters.map((character) => (
-          <CharacterCard character={character} loading={loading} />
+          <CharacterCard character={character} loading={loading} onClick={onClick} />
         ))}
       </Wrapper>
     </>

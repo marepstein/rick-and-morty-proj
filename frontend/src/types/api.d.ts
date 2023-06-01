@@ -15,6 +15,7 @@ declare namespace LickApi {
     species: string;
     gender: string;
     avatar: string;
+    image: string;
   }
 
   interface ICharacter extends ICharacterCore {

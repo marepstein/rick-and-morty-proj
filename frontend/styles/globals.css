@@ -1,8 +1,9 @@
 html,
 body {
   padding: 0;
-  margin: 0;
+  margin: 0 auto;
   font-family: "Helvetica", sans-serif;
+  background: linear-gradient(rgb(168, 228, 252) 15%, transparent 50%);
 }
 
 a {

@@ -1,8 +1,9 @@
 import '../styles/globals.css';
+import AppContainer from 'src/components/_shared/Layout/styles';
 import { AppProps } from 'next/app';
 
 const CustomApp = ({ Component, pageProps }: AppProps) => {
-  return <Component {...pageProps} />;
+  return <AppContainer><Component {...pageProps} /></AppContainer>
 };
 
 // Only uncomment this method if you have blocking data requirements for
