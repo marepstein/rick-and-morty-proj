@@ -8,6 +8,6 @@ export const formatEpisodes = (episode) => {
         name: episode.name,
         airDate: episode.air_date,
         noOfCharacters: episode.characters.length,
-        episode: episode.episode
+        episode: episode.episode,
     }
 }

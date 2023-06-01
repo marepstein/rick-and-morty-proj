@@ -4,6 +4,6 @@ export const formatLocation = (location) => {
         name: location.name,
         type: location.type,
         noOfResidents: location.residents.length,
-        dimension: location.dimension
+        dimension: location.dimension,
     }
 }

@@ -1,10 +1,10 @@
-import styled from 'styled-components';
-import { media } from 'styles/mediaQueries';
+import styled from 'styled-components'
+import { media } from 'styles/mediaQueries'
 
 export const CharacterContainer = styled.section`
     height: 100%;
     margin-top: 1rem;
-`;
+`
 
 export const CharacterHeadSection = styled.div`
     display: flex;
@@ -14,7 +14,7 @@ export const CharacterHeadSection = styled.div`
     ${media.tablet} {
         flex-direction: row;
     }
-`;
+`
 
 export const CharacterInfoContainer = styled.div`
     margin-top: 1.5rem;
@@ -22,11 +22,11 @@ export const CharacterInfoContainer = styled.div`
     ${media.tablet} {
         margin-left: 1rem;
     }
-`;
+`
 
 export const CharacterInfoText = styled.p`
     font-size: 1rem;
-`;
+`
 
 export const CharacterInfoSection = styled.div`
     text-align: center;
@@ -34,11 +34,10 @@ export const CharacterInfoSection = styled.div`
     ${media.tablet} {
         text-align: left;
     }
-`;
-
+`
 
 export const CharacterImage = styled.img`
     max-width: 100%;
     max-height: 10rem;
     border-radius: 50%;
-`;
+`

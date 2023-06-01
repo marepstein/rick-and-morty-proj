@@ -1,14 +1,14 @@
-import styled from 'styled-components';
-import { media } from '../../../../styles/mediaQueries';
+import styled from 'styled-components'
+import { media } from '../../../../styles/mediaQueries'
 
 const StyledSpinner = styled.svg`
     animation: rotate 2s linear infinite;
     width: 5rem;
     height: 5rem;
     margin-top: 10rem;
-    border-top: 4px solid #EAEAEA;
-    border-right: 4px solid #EAEAEA;
-    border-bottom: 4px solid #EAEAEA;
+    border-top: 4px solid #eaeaea;
+    border-right: 4px solid #eaeaea;
+    border-bottom: 4px solid #eaeaea;
     border-left: 4px solid #000;
     border-radius: 50%;
 
@@ -41,14 +41,14 @@ const StyledSpinner = styled.svg`
             stroke-dashoffset: -124;
         }
     }
-`;
+`
 
 const LoadingSpinner = () => {
     return (
         <>
             <StyledSpinner />
         </>
-    );
-};
+    )
+}
 
-export default LoadingSpinner;
+export default LoadingSpinner
