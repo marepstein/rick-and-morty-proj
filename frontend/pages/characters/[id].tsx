@@ -14,14 +14,15 @@ const CharacterPage: NextPage = () => {
 
     useEffect(() => {
         const fetchData = async () => {
+            setIsLoading(true);
             if (router.isReady && id) {
                 try {
-                    setIsLoading(true)
                     const response = await axios.get(
                         `/api/single-character/${id}`
                     )
                     const routeCharacter = response.data
                     setCharacter(routeCharacter)
+                    setIsLoading(false)
                 } catch (error) {
                     console.error('Error fetching character:', error)
                 }
@@ -29,20 +30,16 @@ const CharacterPage: NextPage = () => {
         }
 
         fetchData()
-        setIsLoading(false)
     }, [router, router.isReady, id])
 
     return (
-        <>
-            {isLoading ? (
-                <LoadingSpinner />
-            ) : (
+
                 <CharacterTemplate
                     character={character}
                     isLoading={isLoading}
                 />
-            )}
-        </>
+
+
     )
 }
 

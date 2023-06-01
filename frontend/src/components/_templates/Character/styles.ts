@@ -3,6 +3,14 @@ import { media } from 'styles/mediaQueries'
 
 export const CharacterContainer = styled.section`
     height: 100%;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    ${media.tablet} {
+        align-items: flex-start;
+    }
     margin-top: 1.5rem;
 `
 
@@ -18,9 +26,12 @@ export const CharacterHeadSection = styled.div`
 
 export const CharacterInfoContainer = styled.div`
     margin-top: 1.5rem;
+    text-align: center;
 
     ${media.tablet} {
         margin-left: 1rem;
+        text-align: left;
+
     }
 `
 
