@@ -6,6 +6,8 @@ import axios from 'axios'
 import IntroTemplate from '../src/components/_templates/Intro'
 import LoadingSpinner from 'src/components/_shared/LoadingSpinner'
 
+import { SectionContainer } from 'src/components/_shared/Layout/styles'
+
 const IntroPage: NextPage = () => {
     const [characters, setCharacters] = useState<LickApi.ICharacter[]>([])
     const [clickedCharacter, setClickedCharacter] =
@@ -48,7 +50,7 @@ const IntroPage: NextPage = () => {
     }, [])
 
     return (
-        <>
+        <SectionContainer>
             {!isLoading ? (
                 <IntroTemplate
                     characters={characters}
@@ -59,7 +61,7 @@ const IntroPage: NextPage = () => {
             ) : (
                 <LoadingSpinner />
             )}
-        </>
+        </SectionContainer>
     )
 }
 

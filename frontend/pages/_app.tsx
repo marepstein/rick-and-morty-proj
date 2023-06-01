@@ -1,5 +1,5 @@
 import '../styles/globals.css'
-import AppContainer from 'src/components/_shared/Layout/styles'
+import { AppContainer } from 'src/components/_shared/Layout/styles'
 import { AppProps } from 'next/app'
 import Header from 'src/components/_shared/Header'
 
