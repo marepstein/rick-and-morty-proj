@@ -1,4 +1,3 @@
-import { useRouter } from 'next/router';
 import React from 'react';
 
 import {
@@ -9,13 +8,12 @@ import {
 } from './styles';
 
 interface ICharacterCardProps {
-  image: string;
-  name: string;
-  gender: string;
-  species: string;
+  character: LickApi.ICharacter;
+  loading: boolean;
+  onClick: (onClick) => void;
 }
 
-const CharacterCard = ({ character, loading, onClick }) => {
+const CharacterCard = ({ character, loading, onClick }: ICharacterCardProps) => {
 
   return (
     <CardContainer onClick={() => onClick(character)}>
@@ -31,5 +29,3 @@ const CharacterCard = ({ character, loading, onClick }) => {
 };
 
 export default CharacterCard;
-
-// picture, name, gender, species etc

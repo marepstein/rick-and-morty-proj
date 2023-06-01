@@ -1,7 +1,7 @@
+import axios from 'axios';
 import * as express from 'express';
 
 import { rickAndMortyApiClient } from '../providers/rickAndMortyApiClient';
-import { episodeService } from '../services/episodeService';
 import { locationService } from '../services/locationService';
 import { formatEpisodes } from '../utils/formatEpisodes';
 import { formatLocation } from '../utils/formatLocation';
@@ -15,28 +15,28 @@ router.route('/character/:id')
 
   const characterId = req.params.id;
   const { data: character } = await rickAndMortyApiClient.get(`character/${characterId}`);
-  const { id, name, species, status, type, gender, avatar } = character;
+  const { id, name, image, species, status, type, gender, origin, avatar, episode } = character;
   
   // ----- episode formatting -----
 
-  const sortedCharacterEpisodes = character.episode?.sort();
-  const firstEpisodeID = getIDFromUrl(sortedCharacterEpisodes.shift().split('/'));
-  const lastEpisodeID = getIDFromUrl(sortedCharacterEpisodes.pop().split('/'));
+  const newEpisodesArray: LickApi.IEpisode[] = [];
 
-  const { data: firstEpisode } = await episodeService({ rickAndMortyApiClient, id: firstEpisodeID }).getEpisode();
-  const { data: lastEpisode } = await episodeService({ rickAndMortyApiClient, id: lastEpisodeID }).getEpisode();
+  await Promise.all(episode.map(async (ep: string) => {
+    const { data: episode } = await axios.get(ep);
+    const formattedEpisode = formatEpisodes(episode)
+    newEpisodesArray.push(formattedEpisode);
+  }));
 
-  const firstEpisodeData: LickApi.IEpisode = formatEpisodes(firstEpisode);
-  const lastEpisodeData: LickApi.IEpisode = formatEpisodes(lastEpisode);
+  const sortedEpisodes: LickApi.IEpisode[] = newEpisodesArray.sort((a, b) => a.id - b.id);
 
   // ----- location formatting ------
 
-  const locationID = getIDFromUrl(character.location.url.split('/'));
+  const locationID: number = getIDFromUrl(character.location.url.split('/'));
   const { data: location } = await locationService({ rickAndMortyApiClient, id: locationID }).getLocation();
   const locationData: LickApi.ILocation = formatLocation(location);
 
 
-  res.json({ id, name, species, status, type, gender, avatar, episodes: [firstEpisodeData, lastEpisodeData], location: locationData});
+  res.json({ id, name, image, species, status, type, gender, origin, avatar, episodes: sortedEpisodes, location: locationData});
 });
 
 export default router;

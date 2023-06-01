@@ -6,7 +6,7 @@ export const CharacterContainer = styled.section`
     margin-top: 1rem;
 `;
 
-export const CharacterSection = styled.div`
+export const CharacterHeadSection = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,17 +16,29 @@ export const CharacterSection = styled.div`
     }
 `;
 
-export const CharacterInfoContianer = styled.div`
+export const CharacterInfoContainer = styled.div`
     margin-top: 1.5rem;
+
+    ${media.tablet} {
+        margin-left: 1rem;
+    }
 `;
 
 export const CharacterInfoText = styled.p`
     font-size: 1rem;
 `;
 
+export const CharacterInfoSection = styled.div`
+    text-align: center;
+
+    ${media.tablet} {
+        text-align: left;
+    }
+`;
+
 
 export const CharacterImage = styled.img`
-    max-width: 15rem;
-    max-height: 15rem;
+    max-width: 100%;
+    max-height: 10rem;
     border-radius: 50%;
 `;
