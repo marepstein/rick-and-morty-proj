@@ -1,4 +1,5 @@
 import React from 'react';
+
 import {
   CardContainer,
   CardImage,
@@ -7,15 +8,15 @@ import {
 } from './styles';
 
 interface ICharacterCardProps {
-  image: string;
-  name: string;
-  gender: string;
-  species: string;
+  character: LickApi.ICharacter;
+  loading: boolean;
+  onClick: (onClick) => void;
 }
 
-const CharacterCard = ({ character, loading }) => {
+const CharacterCard = ({ character, loading, onClick }: ICharacterCardProps) => {
+
   return (
-    <CardContainer>
+    <CardContainer onClick={() => onClick(character)}>
       {loading && 'Loading...'}
       <CardImage src={character.image} />
       <CardInfoContainer>
@@ -28,5 +29,3 @@ const CharacterCard = ({ character, loading }) => {
 };
 
 export default CharacterCard;
-
-// picture, name, gender, species etc
