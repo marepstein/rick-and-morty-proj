@@ -11,6 +11,7 @@ export const CharacterContainer = styled.section`
     ${media.tablet} {
         align-items: flex-start;
     }
+    margin-top: 1.5rem;
 `
 
 export const CharacterHeadSection = styled.div`

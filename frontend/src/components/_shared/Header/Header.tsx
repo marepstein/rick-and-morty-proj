@@ -1,29 +1,31 @@
-import { useRouter } from 'next/router'
-import { useEffect, useState, useCallback } from 'react'
-import { HeaderContainer } from './styles'
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+import { HeaderContainer, HeaderTitle } from "./styles";
 
 const Header = () => {
-    const router = useRouter()
-    const [show, setShow] = useState(false)
-
-    const hide = useCallback(() => {
-        setShow(false)
-    }, [setShow])
-
+    const router = useRouter();
+    const [showButton, setShowButton] = useState(false);
+    
     useEffect(() => {
-        // subscribe
-        router.events.on('routeChangeStart', hide)
+        const handleRouteChange = (url) => {
+            if (url === '/') {
+              setShowButton(false);
+            } else {
+              setShowButton(true);
+            }
+          };
+          router.events.on('routeChangeComplete', handleRouteChange);
 
-        // unsubscribe
-        return () => router.events.off('routeChangeStart', hide)
-    }, [hide, router.events])
+          return () => {
+            router.events.off('routeChangeComplete', handleRouteChange);
+          };
+    }, [router]);
 
-    return (
-        <HeaderContainer>
-            <h1>Rick and Morty</h1>
-            {show ? <div>back</div> : null}
-        </HeaderContainer>
-    )
+    return <HeaderContainer>
+        <HeaderTitle>Rick and Morty</HeaderTitle>
+        {showButton ? <Link href="/">&larr; Back to Listings</Link>: null}
+    </HeaderContainer>
 }
 
-export default Header
+export default Header;

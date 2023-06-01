@@ -9,5 +9,8 @@ export const HeaderContainer = styled.div`
     ${media.tablet} {
         text-align: left;
     }
+`;
 
-`
+export const HeaderTitle = styled.h1`
+    margin-bottom: 0.5rem;
+`;

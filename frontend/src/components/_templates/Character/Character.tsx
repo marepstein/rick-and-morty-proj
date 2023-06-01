@@ -1,23 +1,24 @@
-import React from 'react'
 import LoadingSpinner from 'src/components/_shared/LoadingSpinner'
+import Link from 'next/link';
+import React from 'react';
 
 import {
-    CharacterContainer,
-    CharacterHeadSection,
-    CharacterInfoContainer,
-    CharacterImage,
-    CharacterInfoText,
-    CharacterInfoSection,
-} from './styles'
+  CharacterContainer,
+  CharacterHeadSection,
+  CharacterInfoContainer,
+  CharacterImage,
+  CharacterInfoText,
+  CharacterInfoSection,
+} from './styles';
 
 interface ICharacterTemplateProps {
-    character: LickApi.ICharacter
-    isLoading: boolean
+  character: LickApi.ICharacter;
+  isLoading: boolean;
 }
 
 const CharacterTemplate = ({
-    character,
-    isLoading,
+  character,
+  isLoading,
 }: ICharacterTemplateProps) => {
     const firstEpisode = character?.episodes[0];
     const lastEpisode = character?.episodes.pop();
@@ -78,4 +79,4 @@ const CharacterTemplate = ({
     )
 }
 
-export default CharacterTemplate
+export default CharacterTemplate;
