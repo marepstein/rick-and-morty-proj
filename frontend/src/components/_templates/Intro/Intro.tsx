@@ -6,16 +6,16 @@ import CharacterCard from 'src/components/_shared/CharacterCard';
 import { Wrapper } from './styles';
 
 interface IIntroTemplateProps {
-  rickCharacters: LickApi.ICharacterCore[];
-  mortyCharacters: LickApi.ICharacterCore[];
+  rickCharacters: LickApi.ICharacter[];
+  mortyCharacters: LickApi.ICharacter[];
   title: string;
   loading: boolean;
-  onClick: Function;
+  onClick: (onClick) => void;
 }
 
 const IntroTemplate: React.FC<IIntroTemplateProps> = ({
   rickCharacters,
-  mortyCharacters,
+  // mortyCharacters,
   title,
   loading,
   onClick
