@@ -3,7 +3,7 @@ import { media } from 'styles/mediaQueries'
 
 export const CharacterContainer = styled.section`
     height: 100%;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
 `
 
 export const CharacterHeadSection = styled.div`
