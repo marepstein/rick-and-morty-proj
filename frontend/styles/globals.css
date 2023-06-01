@@ -1,16 +1,16 @@
 html,
 body {
-  padding: 0;
-  margin: 0 auto;
-  font-family: "Helvetica", sans-serif;
-  background: linear-gradient(rgb(168, 228, 252) 15%, transparent 50%);
+    padding: 0;
+    margin: 0 auto;
+    font-family: 'Helvetica', sans-serif;
+    background: linear-gradient(#a7e3fc 15%, #fbf976 50%);
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+    color: inherit;
+    text-decoration: none;
 }
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }

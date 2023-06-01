@@ -1,11 +1,16 @@
-import '../styles/globals.css';
-import AppContainer from 'src/components/_shared/Layout/styles';
-import { AppProps } from 'next/app';
-import Header from 'src/components/_shared/Header';
+import '../styles/globals.css'
+import AppContainer from 'src/components/_shared/Layout/styles'
+import { AppProps } from 'next/app'
+import Header from 'src/components/_shared/Header'
 
 const CustomApp = ({ Component, pageProps }: AppProps) => {
-  return <AppContainer><Header /><Component {...pageProps} /></AppContainer>
-};
+    return (
+        <AppContainer>
+            <Header />
+            <Component {...pageProps} />
+        </AppContainer>
+    )
+}
 
 // Only uncomment this method if you have blocking data requirements for
 // every single page in your application. This disables the ability to
@@ -19,4 +24,4 @@ const CustomApp = ({ Component, pageProps }: AppProps) => {
 //   return { ...appProps }
 // }
 
-export default CustomApp;
+export default CustomApp
