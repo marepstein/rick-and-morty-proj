@@ -1,15 +1,34 @@
-import axios from 'axios';
 import * as express from 'express';
+import axios from 'axios';
 
-import { rickAndMortyApiClient } from '../providers/rickAndMortyApiClient';
-import { locationService } from '../services/locationService';
-import { formatEpisodes } from '../utils/formatEpisodes';
-import { formatLocation } from '../utils/formatLocation';
-import { getIDFromUrl } from '../utils/getID';
+import { characterService } from '@services/characterService';
+import { locationService } from '@services/locationService';
+
+import { rickAndMortyApiClient } from '@lib/rickAndMortyApiClient';
+
+import { formatEpisodes } from '@utils/formatEpisodes';
+import { formatLocation } from '@utils/formatLocation';
+import { getIDFromUrl } from '@utils/getID';
 
 const router = express.Router();
 
-router.route('/character/:id').get(async (req: express.Request, res: express.Response) => {
+router.route('/characters').get(async (_, res: express.Response) => {
+  const { data: ricks } = await characterService({
+    rickAndMortyApiClient,
+    name: 'rick',
+  }).getCharacter();
+  const rickArray = ricks.results;
+
+  const { data: mortys } = await characterService({
+    rickAndMortyApiClient,
+    name: 'morty',
+  }).getCharacter();
+  const rickAndMortyArray = rickArray.concat(mortys.results);
+
+  res.json(rickAndMortyArray);
+});
+
+router.route('/characters/:id').get(async (req: express.Request, res: express.Response) => {
   // ----- get character -----
 
   const characterId = req.params.id;

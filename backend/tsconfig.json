@@ -1,40 +1,41 @@
 {
+  "compilerOptions": {
+    "target": "es5",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "allowJs": true,
+    "importHelpers": true,
+    "jsx": "react",
+    "alwaysStrict": true,
+    "sourceMap": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitAny": false,
+    "noImplicitThis": false,
+    "strictNullChecks": false,
+    "outDir": "./build",
+    "baseUrl": ".",
+    "paths": {
+      "@tests/*": ["__tests__/*"],
+      "@services/*": ["services/*"],
+      "@utils/*": ["utils/*"],
+      "@lib/*": ["lib/*"],
+      "@routes/*": ["./routes/*"],
+      "@types/*": ["types/*"],
+      "*": ["backend/*"]
+    }
+  },
+  "ts-node": {
+    "files": true,
+    "require": ["tsconfig-paths/register"],
     "compilerOptions": {
-        "target": "es5",
-        "module": "esnext",
-        "moduleResolution": "node",
-        "allowSyntheticDefaultImports": true,
-        "allowJs": true,
-        "importHelpers": true,
-        "jsx": "react",
-        "alwaysStrict": true,
-        "sourceMap": true,
-        "forceConsistentCasingInFileNames": true,
-        "noFallthroughCasesInSwitch": true,
-        "noImplicitReturns": true,
-        "noUnusedLocals": true,
-        "noUnusedParameters": true,
-        "noImplicitAny": false,
-        "noImplicitThis": false,
-        "strictNullChecks": false,
-        "outDir": "./build",
-        "baseUrl": ".",
-        "paths": {
-            "@server/*": ["src/*"],
-            "@tests/*": ["__tests__/*"],
-            "@config/*": ["src/config/*"],
-            "@domain/*": ["src/domain/*"],
-            "@controller/*": ["src/controller/*"],
-            "@middleware/*": ["src/middleware/*"],
-            "*": ["backend/*"]
-        }
-    },
-    "ts-node": {
-        "files": true,
-        "compilerOptions": {
-            "module": "commonjs"
-        }
-    },
-    "include": ["./", "src/**/*", "__tests__/**/*"],
-    "exclude": ["node_modules", "build"]
+      "module": "commonjs"
+    }
+  },
+  "include": ["./", "src/**/*", "__tests__/**/*"],
+  "exclude": ["node_modules", "build"]
 }
