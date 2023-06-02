@@ -7,61 +7,61 @@ import { type AxiosInstance } from 'axios';
 /* eslint-disable */
 
 declare global {
-    namespace LickApi {
-        type CharacterServiceCapabilities = {
-            rickAndMortyApiClient: AxiosInstance
-            name: string
-        }
+  namespace LickApi {
+    type CharacterServiceCapabilities = {
+      rickAndMortyApiClient: AxiosInstance;
+      name: string;
+    };
 
-        type LocationServiceCapabilities = {
-            rickAndMortyApiClient: AxiosInstance
-            id: number
-        }
+    type LocationServiceCapabilities = {
+      rickAndMortyApiClient: AxiosInstance;
+      id: number;
+    };
 
-        type EpisodeServiceCapabilities = {
-            rickAndMortyApiClient: AxiosInstance
-            id: number
-        }
+    type EpisodeServiceCapabilities = {
+      rickAndMortyApiClient: AxiosInstance;
+      id: number;
+    };
 
-        interface IRickAndMortyApiCharactersResponse {
-            info: {
-                count: number
-                next: string | null
-                prev: string | null
-                paes: number
-            }
-            results: ICharacter[]
-        }
-
-        interface ICharacterCore {
-            id: number
-            name: string
-            status: string
-            species: string
-            gender: string
-            avatar: string
-        }
-
-        interface ICharacter extends ICharacterCore {
-            origin: ILocation
-            location: ILocation
-            episodes: IEpisode[]
-        }
-
-        interface ILocation {
-            id: number
-            name: string
-            type: string
-            noOfResidents: number
-            dimension: string
-        }
-
-        interface IEpisode {
-            id: number
-            name: string
-            airDate: string
-            noOfCharacters: number
-            episode: string
-        }
+    interface IRickAndMortyApiCharactersResponse {
+      info: {
+        count: number;
+        next: string | null;
+        prev: string | null;
+        paes: number;
+      };
+      results: ICharacter[];
     }
+
+    interface ICharacterCore {
+      id: number;
+      name: string;
+      status: string;
+      species: string;
+      gender: string;
+      avatar: string;
+    }
+
+    interface ICharacter extends ICharacterCore {
+      origin: ILocation;
+      location: ILocation;
+      episodes: IEpisode[];
+    }
+
+    interface ILocation {
+      id: number;
+      name: string;
+      type: string;
+      noOfResidents: number;
+      dimension: string;
+    }
+
+    interface IEpisode {
+      id: number;
+      name: string;
+      airDate: string;
+      noOfCharacters: number;
+      episode: string;
+    }
+  }
 }

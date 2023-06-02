@@ -1,7 +1,3 @@
-// interface IProps {
-//     character: LickApi.ICharacter;
-// }
-
 export const formatEpisodes = (episode) => {
   return {
     id: episode.id,
