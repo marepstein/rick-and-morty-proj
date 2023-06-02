@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { CardContainer, CardImage, CardInfoContainer, CardInfo } from './styles'
+import { CardContainer, CardImage, CardInfoContainer, CardInfo, CardButton } from './styles'
 
 interface ICharacterCardProps {
     character: LickApi.ICharacter
@@ -22,6 +22,7 @@ const CharacterCard = ({
                 <CardInfo>Gender: {character.gender}</CardInfo>
                 <CardInfo>Species: {character.species}</CardInfo>
             </CardInfoContainer>
+            <CardButton onClick={() => onClick(character)}>View Profile</CardButton>
         </CardContainer>
     )
 }
