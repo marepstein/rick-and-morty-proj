@@ -20,8 +20,14 @@ const CharacterTemplate = ({
   character,
   isLoading,
 }: ICharacterTemplateProps) => {
-    const firstEpisode = character?.episodes[0];
-    const lastEpisode = character?.episodes.pop();
+    const firstEpisode =
+    character?.episodes.length > 1
+      ? character.episodes[0]
+      : character?.episodes[0];
+  const lastEpisode =
+    character?.episodes.length > 1
+      ? character.episodes.length - 1
+      : character?.episodes[0];
 
     return (
         <CharacterContainer>
