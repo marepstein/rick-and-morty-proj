@@ -3,9 +3,10 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "dev": "next dev",
+        "dev:frontend": "next dev",
         "build": "next build",
-        "start": "next start"
+        "start": "next start",
+        "lint": "eslint . --ext .ts"
     },
     "dependencies": {
         "axios": "^1.4.0",
@@ -21,6 +22,9 @@
         "@types/node": "20.1.2",
         "@types/react": "18.2.6",
         "@types/styled-components": "5.1.26",
+        "@typescript-eslint/eslint-plugin": "^5.59.8",
+        "@typescript-eslint/parser": "^5.59.8",
+        "eslint": "^8.41.0",
         "typescript": "5.0.4"
     }
 }
