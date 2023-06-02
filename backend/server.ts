@@ -13,3 +13,5 @@ app.use(routes);
 app.listen(8000, () => {
   console.log('running on 8000');
 });
+
+export default app;
