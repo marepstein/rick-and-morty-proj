@@ -1,6 +1,3 @@
-export const locationService = ({
-    rickAndMortyApiClient,
-    id,
-}: LickApi.LocationServiceCapabilities) => ({
-    getLocation: async () => rickAndMortyApiClient.get(`location/${id}`),
-})
+export const locationService = ({ rickAndMortyApiClient, id }: LickApi.LocationServiceCapabilities) => ({
+  getLocation: async () => await rickAndMortyApiClient.get(`location/${id}`),
+});

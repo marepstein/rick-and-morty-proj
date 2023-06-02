@@ -1,4 +1,4 @@
-import { AxiosInstance } from 'axios'
+import { type AxiosInstance } from 'axios';
 
 // Namespaces are not compilable.
 // Do not import this file. Or import external dependencies.
