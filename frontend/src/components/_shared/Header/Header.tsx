@@ -6,9 +6,9 @@ import { HeaderContainer, HeaderTitle } from "./styles";
 const Header = () => {
     const router = useRouter();
     const [showButton, setShowButton] = useState(false);
-    
+
     useEffect(() => {
-        const handleRouteChange = (url) => {
+        const handleRouteChange = (url: string) => {
             if (url === '/') {
               setShowButton(false);
             } else {
@@ -16,6 +16,10 @@ const Header = () => {
             }
           };
           router.events.on('routeChangeComplete', handleRouteChange);
+
+          if (router.pathname !== '/') {
+            setShowButton(true);
+          }
 
           return () => {
             router.events.off('routeChangeComplete', handleRouteChange);
