@@ -1,8 +1,8 @@
 import * as express from 'express';
 import axios from 'axios';
 
-import { characterService } from '@services/characterService';
 import { locationService } from '@services/locationService';
+import { characterService } from '@services/characterService';
 
 import { rickAndMortyApiClient } from '@lib/rickAndMortyApiClient';
 
@@ -13,19 +13,10 @@ import { getIDFromUrl } from '@utils/getID';
 const router = express.Router();
 
 router.route('/characters').get(async (_, res: express.Response) => {
-  const { data: ricks } = await characterService({
-    rickAndMortyApiClient,
-    name: 'rick',
-  }).getCharacter();
-  const rickArray = ricks.results;
+  const rickArray = await characterService().getCharacter({ params: { name: 'rick', status: 'alive' } });
+  const mortyArray = await characterService().getCharacter({ params: { name: 'morty', status: 'alive' } });
 
-  const { data: mortys } = await characterService({
-    rickAndMortyApiClient,
-    name: 'morty',
-  }).getCharacter();
-  const rickAndMortyArray = rickArray.concat(mortys.results);
-
-  res.json(rickAndMortyArray);
+  res.json(rickArray.concat(mortyArray));
 });
 
 router.route('/characters/:id').get(async (req: express.Request, res: express.Response) => {
