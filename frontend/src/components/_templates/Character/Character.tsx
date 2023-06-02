@@ -26,8 +26,11 @@ const CharacterTemplate = ({
       : character?.episodes[0];
   const lastEpisode =
     character?.episodes.length > 1
-      ? character.episodes.length - 1
+      ? character.episodes[character.episodes.length - 1]
       : character?.episodes[0];
+
+    console.log(lastEpisode);
+    
 
     return (
         <CharacterContainer>
