@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { media } from 'styles/mediaQueries';
+import { media } from 'src/styles/mediaQueries';
 
 export const CharacterContainer = styled.section`
   height: 100%;

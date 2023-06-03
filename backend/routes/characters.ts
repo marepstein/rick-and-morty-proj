@@ -9,6 +9,7 @@ import { rickAndMortyApiClient } from '@lib/rickAndMortyApiClient';
 import { formatEpisodes } from '@utils/formatEpisodes';
 import { formatLocation } from '@utils/formatLocation';
 import { getIDFromUrl } from '@utils/getID';
+import { formatCharacter } from '@utils/formatCharacter';
 
 const router = express.Router();
 
@@ -16,7 +17,9 @@ router.route('/characters').get(async (_, res: express.Response) => {
   const rickArray = await characterService().getCharacter({ params: { name: 'rick', status: 'alive' } });
   const mortyArray = await characterService().getCharacter({ params: { name: 'morty', status: 'alive' } });
 
-  res.json(rickArray.concat(mortyArray));
+  const characterArray = rickArray.concat(mortyArray);
+  const formattedCharacters = characterArray.map(formatCharacter);
+  res.json(formattedCharacters);
 });
 
 router.route('/characters/:id').get(async (req: express.Request, res: express.Response) => {
@@ -24,7 +27,7 @@ router.route('/characters/:id').get(async (req: express.Request, res: express.Re
 
   const characterId = req.params.id;
   const { data: character } = await rickAndMortyApiClient.get(`character/${characterId}`);
-  const { id, name, image, species, status, type, gender, origin, avatar, episode } = character;
+  const { id, name, image, species, status, gender, origin, episode } = character;
 
   // ----- episode formatting -----
 
@@ -52,13 +55,11 @@ router.route('/characters/:id').get(async (req: express.Request, res: express.Re
   res.json({
     id,
     name,
-    image,
+    avatar: image,
     species,
     status,
-    type,
     gender,
     origin,
-    avatar,
     episodes: sortedEpisodes,
     location: locationData,
   });
