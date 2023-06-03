@@ -27,7 +27,7 @@ const CharacterTemplate = ({ character, isLoading }: ICharacterTemplateProps) =>
       ) : (
         <>
           <CharacterHeadSection>
-            <CharacterImage src={character?.image} />
+            <CharacterImage src={character?.avatar} />
             <CharacterInfoContainer>
               <h1>{character?.name}</h1>
               <CharacterInfoText>Status: {character?.status}</CharacterInfoText>

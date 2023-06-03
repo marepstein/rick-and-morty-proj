@@ -15,7 +15,6 @@ declare namespace LickApi {
     species: string;
     gender: string;
     avatar: string;
-    image: string;
   }
 
   interface ICharacter extends ICharacterCore {
@@ -23,6 +22,8 @@ declare namespace LickApi {
     location: ILocation;
     episodes: IEpisode[];
   }
+
+  type IListCharacter = Omit<LickApi.ICharacter, 'episodes' | 'location' | 'origin'>;
 
   interface ILocation {
     id: number;

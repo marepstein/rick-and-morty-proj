@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { media } from 'styles/mediaQueries';
+import { media } from '../../../styles/mediaQueries';
 
 export const Wrapper = styled.div`
   display: grid;

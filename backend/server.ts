@@ -1,15 +1,15 @@
-import * as express from 'express';
 import * as morgan from 'morgan';
-import { Express } from 'express';
+import * as dotenv from 'dotenv';
 
-import routes from '@routes/index';
+import app from './app';
 
-const app: Express = express();
+dotenv.config();
+const PORT = process.env.PORT || 8000;
 
 app.use(morgan('combined'));
 
-app.use(routes);
-
-app.listen(8000, () => {
-  console.log('running on 8000');
+app.listen(PORT, () => {
+  console.log(`running on ${PORT}`);
 });
+
+export default app;
