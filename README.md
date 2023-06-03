@@ -86,7 +86,9 @@ press a if jest prompts
 ## Future improvements, bugs & challenges
 
 - With more time I would have liked to add some proper testing for both backend and frontend, whilst also incorporating E2E Cypress testing. For frontend, I would add testing for each component and API endpoints.
+- Add path aliases to frontend.
 - Fix bug: some data not coming through correctly e.g. Mortys step dad. This could be fixed through filtering by name to ensure only actual Rick/Morty characters come through.
 - In future, would be nice to incorporate pagination, a search bar and tab functionality to show either Rick or Mortys.
 - For deplopyment, would like to implement Terraform and AWS secrets for any URLs that need hiding.
 - Challenges around getting all the data to fit correct TS interfaces, as well as ensuring all characters from all pages were displaying. Also, faced some challenges with configuration within the app e.g. ESLint, TS imports and testing, however was able to overcome all these challenges and successfuly install the necessary plugins and features.
+- Additional challenges around setting up tests on frontend.

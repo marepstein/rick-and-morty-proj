@@ -14,7 +14,6 @@ node_modules/*
 # testing
 backend/coverage
 frontend/coverage
-frontend/jest.config.js
 
 # next.js
 frontend/.next/

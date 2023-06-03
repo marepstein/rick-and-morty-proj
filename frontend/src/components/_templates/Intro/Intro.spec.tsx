@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import IntroTemplate from './Intro';
 
-import mockCharacters from 'src/mocks/mocks';
+import mockCharacters from '../../../mocks/mocks';
 
 describe('IntroTemplate', () => {
   it('renders the component correctly', () => {
