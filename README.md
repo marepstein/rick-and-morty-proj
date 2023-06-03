@@ -79,9 +79,13 @@ cd backend
 npm run test
 (make sure api server is not running)
 
+cd frontend
+npm run test
+press a if jest prompts
+
 ## Future improvements, bugs & challenges
 
-- With more time I would have liked to add some proper testing for both backend and frontend, whilst also incorporating E2E Cypress testing
+- With more time I would have liked to add some proper testing for both backend and frontend, whilst also incorporating E2E Cypress testing. For frontend, I would add testing for each component and API endpoints.
 - Fix bug: some data not coming through correctly e.g. Mortys step dad. This could be fixed through filtering by name to ensure only actual Rick/Morty characters come through.
 - In future, would be nice to incorporate pagination, a search bar and tab functionality to show either Rick or Mortys.
 - For deplopyment, would like to implement Terraform and AWS secrets for any URLs that need hiding.
