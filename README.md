@@ -13,6 +13,7 @@ BACKEND_API_URL=localhost:8000
 Create .env for backend:
 
 ```
+PORT=8000
 API_URL=https://rickandmortyapi.com/api/
 ```
 
