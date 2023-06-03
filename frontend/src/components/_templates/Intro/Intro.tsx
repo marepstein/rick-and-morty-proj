@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Meta from '../../_shared/Meta';
-import CharacterCard from 'src/components/_shared/CharacterCard';
+import CharacterCard from '../../_shared/CharacterCard';
 
 import { Wrapper } from './styles';
 
