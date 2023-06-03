@@ -1,4 +1,4 @@
-import LoadingSpinner from 'src/components/_shared/LoadingSpinner';
+import LoadingSpinner from '../../_shared/LoadingSpinner';
 import React from 'react';
 
 import {

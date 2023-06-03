@@ -1,7 +1,9 @@
+import React from 'react';
+
 import '../src/styles/globals.css';
-import { AppContainer } from 'src/components/_shared/Layout/styles';
+import { AppContainer } from '../src/components/_shared/Layout/styles';
 import { AppProps } from 'next/app';
-import Header from 'src/components/_shared/Header';
+import Header from '../src/components/_shared/Header';
 
 const CustomApp = ({ Component, pageProps }: AppProps) => {
   return (
